@@ -41,6 +41,7 @@ const BookStore = () => {
                     {books.map((b: Book) => (
                         <ListItem
                             key={b.title}
+                            disableGutters
                             secondaryAction={
                                 <IconButton edge='end'>
                                     <AddBoxIcon sx={{ transform: 'scale(1.5)' }} color='success' />

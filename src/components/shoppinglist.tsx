@@ -28,15 +28,16 @@ const ShoppingList = () => {
     return (
         <Card
             sx={{
-                width: 500,
-                margin: (theme) => theme.spacing(2),
-                marginLeft: (theme) => theme.spacing(8),
+                width: 600,
+                margin: theme.spacing(2),
+                marginLeft: theme.spacing(8),
             }}>
             <CardContent>
                 <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
                     {shoppingList.map((s: Item) => (
                         <ListItem
                             key={s.title}
+                            disableGutters
                             secondaryAction={
                                 <Typography sx={{ paddingX: theme.spacing(1) }}>{`${s.quantity}x`}</Typography>
                             }>
