@@ -21,7 +21,7 @@ const ShoppingList = () => {
     const theme = useTheme();
 
     useEffect(() => {
-        const sum = shoppingList.reduce((sum: number, item: Item) => sum + item.price * item.quantity, 0);
+        const sum = shoppingList.reduce((sum: any, item: Item) => sum + item.price * item.quantity, 0);
         setPriceSum(sum);
     }, [shoppingList]);
 

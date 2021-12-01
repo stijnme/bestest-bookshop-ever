@@ -9,7 +9,7 @@ interface Props {
 
 interface IDispatchShortlistAction {
     type: string;
-    payload: Book[] | Book;
+    payload: Book;
 }
 
 export const ShoppingListProvider = ({ children }: Props) => {

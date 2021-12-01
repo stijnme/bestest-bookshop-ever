@@ -13,6 +13,6 @@ export function isBook(item: any): item is Book {
     return 'isbn' in item;
 }
 
-export type Item = Book & {
+export type Item = Omit<Book, 'pages'> & {
     quantity: number;
 };
