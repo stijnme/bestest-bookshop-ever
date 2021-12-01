@@ -33,6 +33,13 @@ const ShoppingList = () => {
                 marginLeft: theme.spacing(8),
             }}>
             <CardContent>
+                <Typography variant='h6' sx={{ textAlign: 'center' }}>
+                    Shopping basket
+                </Typography>
+                {shoppingList.length === 0 && (
+                    <Typography sx={{ fontWeight: 'bold' }}>Add a good or bestest book!</Typography>
+                )}
+                {shoppingList.length > 0 && (
                 <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
                     {shoppingList.map((s: Item) => (
                         <ListItem
@@ -51,9 +58,10 @@ const ShoppingList = () => {
                         </ListItem>
                     ))}
                 </List>
+                )}
             </CardContent>
             <CardActions>
-                <Typography>{`Total price: € ${priceSum}`}</Typography>
+                <Typography sx={{ fontWeight: 'bold' }}>{`Total price: € ${priceSum}`}</Typography>
             </CardActions>
         </Card>
     );
