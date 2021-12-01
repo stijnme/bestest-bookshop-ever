@@ -8,7 +8,7 @@ const mockBooks: Book[] = [
         pages: 1296,
         title: 'The life of Bastiaan',
         year: 1867,
-        price: '€ 0.99',
+        price: 0.99,
         isbn: 1234567891,
     },
     {
@@ -18,7 +18,7 @@ const mockBooks: Book[] = [
         pages: 1337,
         title: 'The life of Bastiaan, part2',
         year: 1945,
-        price: '€ 0.99',
+        price: 0.99,
         isbn: 1234567892,
     },
     {
@@ -28,7 +28,7 @@ const mockBooks: Book[] = [
         pages: 92,
         title: 'The man of few words',
         year: 1999,
-        price: '€ 1.99',
+        price: 1.99,
         isbn: 1234567893,
     },
     {
@@ -38,7 +38,7 @@ const mockBooks: Book[] = [
         pages: 92,
         title: 'The man of a bit more words',
         year: 2001,
-        price: '€ 1.99',
+        price: 1.99,
         isbn: 1234567894,
     },
     {
@@ -48,7 +48,7 @@ const mockBooks: Book[] = [
         pages: 235634,
         title: 'The man of many words',
         year: 0,
-        price: '€ 3.99',
+        price: 3.99,
         isbn: 1234567895,
     },
     {
@@ -58,7 +58,7 @@ const mockBooks: Book[] = [
         pages: 23523636,
         title: 'The man of too many words',
         year: 0,
-        price: '€ 3.99',
+        price: 3.99,
         isbn: 1234567896,
     },
 ];

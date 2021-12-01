@@ -5,7 +5,7 @@ export interface Book {
     pages: number;
     title: string;
     year: number;
-    price: string;
+    price: number;
     isbn: number;
 }
 
