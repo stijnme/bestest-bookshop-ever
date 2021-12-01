@@ -9,6 +9,7 @@ const mockBooks: Book[] = [
         title: 'The life of Bastiaan',
         year: 1867,
         price: '€ 0.99',
+        isbn: 1234567891,
     },
     {
         author: 'Bastiaan van Meggelen',
@@ -18,6 +19,7 @@ const mockBooks: Book[] = [
         title: 'The life of Bastiaan, part2',
         year: 1945,
         price: '€ 0.99',
+        isbn: 1234567892,
     },
     {
         author: 'Timon van Soom',
@@ -27,6 +29,7 @@ const mockBooks: Book[] = [
         title: 'The man of few words',
         year: 1999,
         price: '€ 1.99',
+        isbn: 1234567893,
     },
     {
         author: 'Timon van Soom',
@@ -36,6 +39,7 @@ const mockBooks: Book[] = [
         title: 'The man of a bit more words',
         year: 2001,
         price: '€ 1.99',
+        isbn: 1234567894,
     },
     {
         author: 'Mouade Boussaid',
@@ -45,6 +49,7 @@ const mockBooks: Book[] = [
         title: 'The man of many words',
         year: 0,
         price: '€ 3.99',
+        isbn: 1234567895,
     },
     {
         author: 'Mouade Boussaid',
@@ -54,6 +59,7 @@ const mockBooks: Book[] = [
         title: 'The man of too many words',
         year: 0,
         price: '€ 3.99',
+        isbn: 1234567896,
     },
 ];
 export default mockBooks;

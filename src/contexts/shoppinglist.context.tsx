@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { Book, Item } from '../interfaces/interfaces';
+import { Book, isBook, Item } from '../interfaces/interfaces';
 
 const ShoppingListContext = createContext<any>(null);
 
@@ -9,15 +9,26 @@ interface Props {
 
 interface IDispatchShortlistAction {
     type: string;
-    payload: Book[];
+    payload: Book[] | Book;
 }
 
 export const ShoppingListProvider = ({ children }: Props) => {
     const [shoppingList, dispatchShoppingList] = useReducer(
-        (state: Book[], action: IDispatchShortlistAction): Item[] => {
+        (state: Item[], action: IDispatchShortlistAction): Item[] => {
             switch (action.type) {
                 case 'add':
-                    return [];
+                    const b = action.payload;
+                    if (isBook(b)) {
+                        const index = state.findIndex((i: Item) => i.isbn === b.isbn);
+                        if (index > -1)
+                            return [
+                                ...state.slice(0, index),
+                                { ...state[index], quantity: state[index].quantity + 1 },
+                                ...state.slice(index + 1),
+                            ];
+                        return [...state, { ...b, quantity: 1 }];
+                    }
+                    throw new Error('can only add a single book');
                 default:
                     throw new Error(`Unsupported action type: ${action.type}`);
             }

@@ -6,6 +6,11 @@ export interface Book {
     title: string;
     year: number;
     price: string;
+    isbn: number;
+}
+
+export function isBook(item: any): item is Book {
+    return 'isbn' in item;
 }
 
 export type Item = Book & {
