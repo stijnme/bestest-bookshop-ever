@@ -3,7 +3,7 @@
 * this repository
 * typescript
 
-> To install typescript globally, run `yarn add global typescript`
+> To install typescript globally, run `yarn global add typescript`
 
 ## Challenges
 
@@ -25,6 +25,9 @@
 * Add a new type `Item` which is the same as `Book`, but has
   * an additional property `quantity`
   * bonus points if you can drop the `pages` property from `Book` in the same line!
+* update/refactor all the `any` or `any[]` to their proper type, in:
+  * shoppinglist.tsx
+  * shoppinglist.context.tsx
 * update/refactor the shoppinglist component to display the quantity of each book in the list
 
 
