@@ -1,5 +1,8 @@
 import { Book } from '../interfaces/interfaces';
 
+// make me generic and working, if you can...
+export const stateReplace = (s: any[], o: any, i: number): any[] => [];
+
 const mockBooks: Book[] = [
     {
         author: 'Bastiaan van Meggelen',
