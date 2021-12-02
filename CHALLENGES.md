@@ -3,7 +3,7 @@
 * this repository
 * typescript
 
-> To install typescript globally, run `yarn add global typescript`
+> If needed, you can install typescript globally, run `yarn global add typescript`
 
 ## Challenges
 

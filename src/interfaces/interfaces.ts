@@ -13,6 +13,4 @@ export function isBook(item: any): item is Book {
     return 'isbn' in item;
 }
 
-export type Item = Omit<Book, 'pages'> & {
-    quantity: number;
-};
+// export type Item - challenge-3

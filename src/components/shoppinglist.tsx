@@ -10,7 +10,6 @@ import {
     ListItemText,
     useTheme,
 } from '@mui/material';
-import { Item } from '../interfaces/interfaces';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { useShoppingList } from '../contexts/shoppinglist.context';
 import { useEffect, useState } from 'react';
@@ -19,11 +18,6 @@ const ShoppingList = () => {
     const [priceSum, setPriceSum] = useState(0);
     const { shoppingList } = useShoppingList();
     const theme = useTheme();
-
-    useEffect(() => {
-        const sum = shoppingList.reduce((sum: any, item: Item) => sum + item.price * item.quantity, 0);
-        setPriceSum(sum);
-    }, [shoppingList]);
 
     return (
         <Card
@@ -41,12 +35,12 @@ const ShoppingList = () => {
                 )}
                 {shoppingList.length > 0 && (
                 <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
-                    {shoppingList.map((s: Item) => (
+                    {shoppingList.map((s: any) => (
                         <ListItem
                             key={s.title}
                             disableGutters
                             secondaryAction={
-                                <Typography sx={{ paddingX: theme.spacing(1) }}>{`${s.quantity}x`}</Typography>
+                                <Typography sx={{ paddingX: theme.spacing(1) }}>{`0x`}</Typography>
                             }>
                             <ListItemAvatar>
                                 <Avatar sx={{ bgcolor: theme.palette.primary.light }}>
@@ -61,7 +55,7 @@ const ShoppingList = () => {
                 )}
             </CardContent>
             <CardActions>
-                <Typography sx={{ fontWeight: 'bold' }}>{`Total price: € ${priceSum}`}</Typography>
+                <Typography sx={{ fontWeight: 'bold' }}>{`Total price: € 0 (challenge-4)`}</Typography>
             </CardActions>
         </Card>
     );
