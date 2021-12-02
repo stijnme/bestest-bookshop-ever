@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
+import { stateReplace } from '../data/booklist';
 import { Book, isBook, Item } from '../interfaces/interfaces';
 
 const ShoppingListContext = createContext<any>(null);
@@ -21,11 +22,16 @@ export const ShoppingListProvider = ({ children }: Props) => {
                     if (isBook(b)) {
                         const index = state.findIndex((i: Item) => i.isbn === b.isbn);
                         if (index > -1)
-                            return [
+                            return stateReplace<Item>(
+                                state,
+                                { ...state[index], quantity: state[index].quantity + 1 },
+                                index
+                            );
+                        /*return [
                                 ...state.slice(0, index),
                                 { ...state[index], quantity: state[index].quantity + 1 },
                                 ...state.slice(index + 1),
-                            ];
+                            ];*/
                         return [...state, { ...b, quantity: 1 }];
                     }
                     throw new Error('can only add a single book');
