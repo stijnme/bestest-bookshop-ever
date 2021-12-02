@@ -22,10 +22,6 @@ const BookStore = () => {
     const { dispatchShoppingList } = useShoppingList();
     const theme = useTheme();
 
-    const addBookToList = (b: Book): void => {
-        dispatchShoppingList({ type: 'add', payload: b });
-    };
-
     useEffect(() => {
         setBooks(mockBooks);
     }, []);
@@ -47,10 +43,10 @@ const BookStore = () => {
                             key={b.title}
                             disableGutters
                             secondaryAction={
+                                //
+                                // challenge 1 - make this IconButton call the dispatcher when it is clicked
+                                //
                                 <IconButton
-                                    onClick={() => {
-                                        addBookToList(b);
-                                    }}
                                     edge='end'>
                                     <AddBoxIcon sx={{ transform: 'scale(1.5)' }} color='success' />
                                 </IconButton>
