@@ -18,6 +18,8 @@ const ShoppingList = () => {
     const { shoppingList } = useShoppingList();
     const theme = useTheme();
 
+    // add challenge-4 code here.
+
     return (
         <Card
             sx={{
@@ -33,24 +35,24 @@ const ShoppingList = () => {
                     <Typography sx={{ fontWeight: 'bold' }}>Add a good or bestest book!</Typography>
                 )}
                 {shoppingList.length > 0 && (
-                <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
-                    {shoppingList.map((s: Item) => (
-                        <ListItem
-                            key={s.title}
-                            disableGutters
-                            secondaryAction={
-                                <Typography sx={{ paddingX: theme.spacing(1) }}>{`${s.quantity}x`}</Typography>
-                            }>
-                            <ListItemAvatar>
-                                <Avatar sx={{ bgcolor: theme.palette.primary.light }}>
-                                    <LibraryBooksIcon />
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary={s.title} secondary={`Author: ${s.author}`} />
-                            <Typography sx={{ paddingX: theme.spacing(1) }}>{s.price}</Typography>
-                        </ListItem>
-                    ))}
-                </List>
+                    <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
+                        {shoppingList.map((s: Item) => (
+                            <ListItem
+                                key={s.title}
+                                disableGutters
+                                secondaryAction={
+                                    <Typography sx={{ paddingX: theme.spacing(1) }}>{`${s.quantity}x`}</Typography>
+                                }>
+                                <ListItemAvatar>
+                                    <Avatar sx={{ bgcolor: theme.palette.primary.light }}>
+                                        <LibraryBooksIcon />
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText primary={s.title} secondary={`Author: ${s.author}`} />
+                                <Typography sx={{ paddingX: theme.spacing(1) }}>{s.price}</Typography>
+                            </ListItem>
+                        ))}
+                    </List>
                 )}
             </CardContent>
             <CardActions>

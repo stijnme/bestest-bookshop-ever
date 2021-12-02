@@ -1,6 +1,5 @@
 import { Book } from '../interfaces/interfaces';
 
-export const stateReplace = <T>(s: T[], o: T, i: number): T[] => [...s.slice(0, i), o, ...s.slice(i + 1)];
 const mockBooks: Book[] = [
     {
         author: 'Bastiaan van Meggelen',
