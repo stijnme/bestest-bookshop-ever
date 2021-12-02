@@ -1,6 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { stateReplace } from '../data/booklist';
-import { Book, isBook } from '../interfaces/interfaces';
+import { Book } from '../interfaces/interfaces';
 
 const ShoppingListContext = createContext<any>(null);
 
@@ -18,19 +17,13 @@ export const ShoppingListProvider = ({ children }: Props) => {
         (state: any[], action: IDispatchShortlistAction): any[] => {
             switch (action.type) {
                 case 'add':
-                    const b = action.payload;
-                    if (isBook(b)) {
-                        const index = state.findIndex((i: any) => i.isbn === b.isbn);
-                        if (index > -1) {
-                            return [
-                                ...state.slice(0, index),
-                                { ...state[index], quantity: state[index].quantity + 1 },
-                                ...state.slice(index + 1),
-                            ];
-                        }
-                        return [...state, { ...b, quantity: 1 }];
-                    }
-                    throw new Error('can only add a single book');
+                    console.log('inside reducer, action = ', action);
+
+                    //
+                    // challenge 2 - implement this action
+                    //
+
+                    return [];
                 default:
                     throw new Error(`Unsupported action type: ${action.type}`);
             }
