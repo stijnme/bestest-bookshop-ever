@@ -12,10 +12,8 @@ import {
 } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { useShoppingList } from '../contexts/shoppinglist.context';
-import { useEffect, useState } from 'react';
 
 const ShoppingList = () => {
-    const [priceSum, setPriceSum] = useState(0);
     const { shoppingList } = useShoppingList();
     const theme = useTheme();
 
