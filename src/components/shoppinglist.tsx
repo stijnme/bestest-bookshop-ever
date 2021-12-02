@@ -13,17 +13,10 @@ import {
 import { Item } from '../interfaces/interfaces';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { useShoppingList } from '../contexts/shoppinglist.context';
-import { useEffect, useState } from 'react';
 
 const ShoppingList = () => {
-    const [priceSum, setPriceSum] = useState(0);
     const { shoppingList } = useShoppingList();
     const theme = useTheme();
-
-    useEffect(() => {
-        const sum = shoppingList.reduce((sum: any, item: Item) => sum + item.price * item.quantity, 0);
-        setPriceSum(sum);
-    }, [shoppingList]);
 
     return (
         <Card
@@ -61,7 +54,7 @@ const ShoppingList = () => {
                 )}
             </CardContent>
             <CardActions>
-                <Typography sx={{ fontWeight: 'bold' }}>{`Total price: € ${priceSum}`}</Typography>
+                <Typography sx={{ fontWeight: 'bold' }}>{`Total price: € 0 (challenge-4)`}</Typography>
             </CardActions>
         </Card>
     );
